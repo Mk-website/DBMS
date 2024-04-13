@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="../css1/arr.css">
+</head>
+<body>
+    
+    <div id="outputframe"><h2>Creating Table</h2>
+        <p>To create a table in MySQL, you can use the following SQL statement:</p>
+        <h2>Syntax</h2>
+        <p>
+            CREATE TABLE table_name (
+                column1 datatype constraints,
+                column2 datatype constraints,
+                ...
+            );
+            
+        </p>
+        <p>
+        table_name: This is the name of the table you want to create.<br><br>
+
+        (column1, column2, ...): These are the names of the columns in the table.<br><br>
+
+        datatype: Specifies the data type for each column. Examples include INT, VARCHAR, DATE, etc.<br><br>
+
+        constraints: Optional constraints that enforce rules or conditions on the data in the columns, such as PRIMARY KEY, NOT NULL, UNIQUE, FOREIGN KEY, etc.<br><br>
+        Here's an example of creating a simple table named student with three columns:</p>
+        <h2>Query</h2>
+        <p>
+            USE school;<br><br>
+            Database changed<br><br>
+            CREATE TABLE student (
+                RollNo INT PRIMARY KEY,
+                Name VARCHAR(50),
+                PhoneNo VARCHAR(10)
+            );<br><br>Query OK, 0 rows affected (0.16 sec)
+        </p>
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css1/arr.css">
+</head>
+
+<body>
+
+    <h1>TREE</h1>
+    <h2>Program 5</h2>
+    <div class="box" id="pro1">
+        <h3>CONSTRUCT BINARY TREE FROM POSTORDER AND INORDER TRAVERSAL</h3>
+        <p>
+        <pre>
+
+            #include&lt;stdio.h&gt;
+            #include&lt;stdlib.h&gt;
+            
+            struct node
+            {
+                int data;
+                struct node *left;
+                struct node *right;
+            };
+            typedef struct node Node;
+            
+            Node* cntructTree(int postorder[], int inorder[],int postStart, int postEnd, int inStart, int inEnd){
+                int i;
+                Node *root;
+                if (postStart &gt; postEnd || inStart &gt; inEnd)
+                    return NULL;
+            
+                root = (Node*)malloc(sizeof(Node));
+                root-&gt;data = postorder[postEnd];
+                root-&gt;left = root-&gt;right = NULL;
+            
+                if (inStart == inEnd)
+                    return root;
+            
+                for (i = inStart; i &lt;= inEnd; i++) {
+                    if (inorder[i] == root-&gt;data)
+                        break;
+                }
+            
+                root-&gt;right = cntructTree(postorder, inorder, postEnd-(inEnd - i)-1, postEnd-1, i+1, inEnd);
+                root-&gt;left = cntructTree(postorder, inorder, postStart, postEnd-(inEnd - i),  inStart, i-1);
+            
+                return root;
+            }
+            
+            void inorderTraversal(Node* root) {
+                if (root == NULL) {
+                    return;
+                }
+                inorderTraversal(root-&gt;left);
+                printf("%d ", root-&gt;data);
+                inorderTraversal(root-&gt;right);
+            }
+            
+            int main(){
+                int post[10], in[10];
+                Node *root = NULL;
+            
+                printf("Enter postorder traversal (seperated by space)\n");
+                scanf("%d%d%d%d%d%d%d%d%d%d", &amp;post[0], &amp;post[1], &amp;post[2], &amp;post[3], &amp;post[4], &amp;post[5], &amp;post[6], &amp;post[7], &amp;post[8], &amp;post[9]);
+                printf("Enter inorder traversal (seperated by space)\n");
+                scanf("%d%d%d%d%d%d%d%d%d%d", &amp;in[0], &amp;in[1], &amp;in[2], &amp;in[3], &amp;in[4], &amp;in[5], &amp;in[6], &amp;in[7], &amp;in[8], &amp;in[9]);
+                
+            
+                root = cntructTree(post, in, 0, 9, 0, 9);
+                inorderTraversal(root);
+            }
+                
+      </pre>
+
+        </p>
+
+
+    </div>
+    
+    <div class="r">
+        <h1>OUTPUT</h1>
+        <div id="result">
+            <pre>
+Enter postorder traversal (seperated by space)
+3 6 7 4 12 11 8 2 5 10 
+Enter inorder traversal (seperated by space)
+3 12 6 4 7 10 11 5 2 8 
+Printing Inorder
+3 12 6 4 7 10 11 5 2 8
+            
+</pre>
+        </div>
+    </div>
+</body>
+
+
+</html>

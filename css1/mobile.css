@@ -1,0 +1,77 @@
+@media screen and (max-width: 1200px) {
+  .navigation {
+    flex-direction: column;
+    margin-bottom: 23px;
+  }
+
+  .nav-left {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .content-right {
+    display: none;
+  }
+
+  .main {
+    flex-direction: column;
+  }
+.dsbg h1
+{
+  font-size: 1.0em;
+}
+  .form-input {
+    width: 50%;
+  }
+  .form-box input,
+  textarea {
+    width: 66vw;
+  }
+  
+  
+  /*
+  .main {
+    position: static;
+    height: 100vh;
+    padding: 12px 0px;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  */
+  .sidebar{
+    position: absolute;
+    left: 0;
+    width: 15%;
+    height: 100%;
+    background: #042331;
+    margin-top: 2%;
+    overflow: scroll;
+  }
+ 
+  .sidebar header a
+{
+  text-decoration: none;
+  font-size: 0.8em;
+  color: white;
+  line-height: 1.5em;
+  font-weight: bold;
+}
+  .sidebar ul a{
+    display: block;
+    height: auto;
+    width: auto;
+    line-height: 2%;
+    font-size: 1.0em;
+    color: white;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid black;
+  }
+  .op{
+    background: #042331;
+    color: aqua;
+    font-size: 1em;
+    width: 100%;
+  }
+}

@@ -1,0 +1,160 @@
+
+.box {
+  border-right: 5px solid blue;
+  font-size: 2.0em;
+  width: 100vw;
+  height:auto;
+  margin-left: 1%;
+  flex-direction: column;
+  color:cyan ;
+  background-color: black;
+  
+}
+pre
+{
+  font-size: 1.5em;
+}
+/*
+.box::-webkit-scrollbar {
+  width: 0.1em;
+}
+*/
+
+#result {
+  width: 100vw;
+  height: auto;
+  font-size: 2.0em;
+  border: 0px solid #ccc;
+  position: relative;
+  margin-left: 1%;
+  color:cyan ;
+  background-color: black;
+  
+}
+h1{
+  color: rgb(54, 12, 239);
+  text-align: center;
+  font-size: 3.0em;
+  margin-bottom: 1%;
+  border-bottom: 2px solid navy;
+  width: 50%;
+  margin-left: 25%;
+  }
+
+table{
+  font-size: 25pt;
+  margin: 30px 0 0 30px;
+  width: 90vw;
+  height: auto;
+  border: 5px dashed navy;
+}
+table th {
+  font-size: 1.5em;
+  color: red;
+  border: 2px groove blue;
+ 
+}
+table td{
+color: rgb(21, 0, 255);
+border: 2px groove blue;
+
+}
+table td a
+{
+  text-decoration: none;
+  color: rgb(21, 0, 255);
+}
+h3
+{
+  font-size: 1.5em;
+  color: chartreuse;
+}
+#outputframe{
+  height: 100%;
+  width: 90%;
+  overflow-y: scroll;
+  margin: auto;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+#outputframe pre, #outputframe p {
+  width: 80%;
+  background-color: rgba(2, 2, 2, 0.9);
+  color: white;
+  font-family: consolas;
+  padding: 2vh 4vh;
+  font-size: 1.3em;
+  overflow-x: scroll;
+  border-radius: 10px;
+  margin: auto;
+  text-align: justify;
+  margin-bottom: 3vh;
+}
+.p
+{
+  width: 80%;
+  background-color: rgba(2, 2, 2, 0.9);
+  color: white;
+  font-family: consolas;
+  padding: 2vh 4vh;
+  font-size: 1.3em;
+  overflow-x: scroll;
+  border-radius: 10px;
+  margin: auto;
+  text-align: justify;
+  margin-bottom: 3vh;
+}
+#outputframe h1,#outputframe h2{
+  margin: 4vh 0;
+  text-align: center;
+}
+#outputframe table{
+  width: 100%;
+  font-size: 24px;
+  font-family: consolas;
+  margin: 30px 0px;
+  padding: 10px;
+  border: 1px dashed white;
+  /* background-color: rgb(22, 18, 18); */
+  border-radius: 5px;
+}
+#outputframe table th, #outputframe table td{
+  padding: 15px;
+  border: 2px solid white;
+  color: white;
+}
+@media screen and (max-width: 1200px) {
+  .box {
+    border-right: 1px solid blue;
+    font-size: 1.0em;
+    width: 100%;
+    height: auto;
+    margin-left: 1%;
+    overflow-y: scroll;
+    overflow-x: auto;
+    float: left;
+    color:cyan ;
+    background-color: black;
+    
+  }
+  .box::-webkit-scrollbar {
+    width: 0.1em;
+  }
+  
+  #result {
+    width: 100%;
+    height: auto;
+    font-size: 1.0em;
+    border: 0px solid #ccc;
+    position: relative;
+    
+    margin-left: 1%;
+    float: left;
+    overflow-y: scroll;
+    color:cyan ;
+    background-color: black;
+    
+  }
+
+}

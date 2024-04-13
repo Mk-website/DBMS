@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css1/arr.css">
+</head>
+
+<body>
+
+    <h1>TREE</h1>
+    <h2>Program 6</h2>
+    <div class="box" id="pro1">
+        <h3>FIND THE MAXIMUM DEPTH OF BINARY TREE</h3>
+        <p>
+        <pre>
+
+            #include &lt;stdio.h&gt;
+            #include &lt;stdlib.h&gt;
+            
+            struct TreeNode {
+                int val;
+                struct TreeNode* left;
+                struct TreeNode* right;
+            };
+            typedef struct TreeNode Node;
+            Node* newNode(int val) {
+                Node* node = (Node*)malloc(sizeof(Node));
+                node-&gt;val = val;
+                node-&gt;left = NULL;
+                node-&gt;right = NULL;
+                return node;
+            }
+            
+            int maxDepth(Node* root) {
+                if (root == NULL) {
+                    return 0;
+                } else {
+                    int leftDepth = maxDepth(root-&gt;left);
+                    int rightDepth = maxDepth(root-&gt;right);
+            
+                    return (leftDepth &gt; rightDepth) ? (leftDepth + 1) : (rightDepth + 1);
+                }
+            }
+            
+            int main() {
+                Node* root = newNode(1);
+                root-&gt;left = newNode(2);
+                root-&gt;right = newNode(3);
+                root-&gt;left-&gt;left = newNode(4);
+                root-&gt;left-&gt;right = newNode(5);
+                root-&gt;left-&gt;left-&gt;left = newNode(54);
+                int depth = maxDepth(root);
+                printf("Maximum depth of the binary tree is: %d\n", depth);
+            
+                return 0;
+            }
+            
+      </pre>
+
+        </p>
+
+
+    </div>
+    
+    <div class="r">
+        <h1>OUTPUT</h1>
+        <div id="result">
+            <pre>    Maximum depth of the binary tree is: 4
+            </pre>
+        </div>
+    </div>
+</body>
+
+
+</html>

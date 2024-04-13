@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="../css1/arr.css">
+</head>
+<body>
+    
+    <h1>RECURSION</h1>
+    <h2>Program 3</h2>
+    <div class="box" id="pro1">
+    <h3>CALCULATE THE SUM OF NATURAL NUMBERS TILL 10 USING RECURSION.</h3>
+    <p>
+      <pre>
+        #include &lt;stdio.h&gt;
+
+            int sum(int num)
+            {
+                if (num==0)
+                {
+                    return 0;
+                }
+                
+                    return num+sum(num-1); 
+            }
+            void main()
+            {
+                int num =10;
+                printf("SUM OF 10 NATURAL NUMBERS %d",sum(num));
+            }
+      </pre> 
+        
+    </p>
+   
+  
+   </div>
+   <div class="r">
+    
+    <h1>OUTPUT</h1>
+    <div id="result">
+       <pre>
+        SUM OF 10 NATURAL NUMBERS  55
+</pre>
+    </div>
+</div>
+</body>
+
+</html>

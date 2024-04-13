@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="../css1/arr.css">
+</head>
+<body>
+    
+    <h1>Searching Algorithms</h1>
+    <h2>Program 8</h2>
+    <div class="box" id="pro1">
+    <h3>ENTER A STRING FROM THE USER, ENTER A CHARACTER AND PERFORM BINARY SEARCH ALGORITHM THROUGH ITERATION.</h3>
+    <p>
+      <pre>
+        #include &lt;stdio.h&gt;
+        #include &lt;string.h&gt;
+        #include &lt;conio.h&gt;
+        #include &lt;dos.h&gt;
+        
+        int binarySearch(char arr[], int n, char key) {
+            int l = 0, u = n-1;
+            while(l &lt;= u)
+            {
+                int mid = l + (u - l) / 2;
+                if (arr[mid] == key)
+                {
+                    return mid;
+                }
+                else if(arr[mid] &gt; key){
+                    u = mid-1;
+                }
+                else {
+                    l = mid+1;
+                }
+            }
+            return -1; 
+        }
+        
+        void main() {
+            char arr[20], key;
+            int result;
+            clrscr();
+            printf("Enter any String\n");
+            gets(arr);
+        
+            printf("Enter Character to be searched\n");
+            scanf("%c", &key);
+            result = binarySearch(arr, strlen(arr), key);
+        
+            if (result == -1) {
+                printf("Element %c not found in the array.\n", key);
+            } else {
+                printf("Element %c found at position %d.\n", key, result+1);
+            }
+        
+            delay(5000);
+        }
+      </pre> 
+        
+    </p>
+   
+  
+   </div>
+   <div class="r">
+    
+    <h1>OUTPUT</h1>
+    <div id="result">
+       <pre>
+        Enter any String
+        Glitter
+        Enter Character to be searched
+        t
+        Element t found at position 4. 
+</pre>
+    </div>
+</div>
+</body>
+
+</html>

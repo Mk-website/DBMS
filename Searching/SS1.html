@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="../css1/arr.css">
+</head>
+<body>
+    
+    <h1>Searching Algorithms</h1>
+    <h2>Program 1</h2>
+    <div class="box" id="pro1">
+    <h3>ENTER A INTEGER ARRAY FROM THE USER, ENTER AN INTEGER VALUE AND PERFORM LINEAR SEARCH ALGORITHM THROUGH ITERATION.</h3>
+    <p>
+      <pre>
+        #include &lt;stdio.h&gt;
+    #include &lt;conio.h&gt;
+    #include &lt;dos.h&gt;
+    int linearSearch(int arr[], int n, int key) {
+        int i;
+        for (i = 0; i &lt; n; i++) {
+            if (arr[i] == key) {
+                return i;
+            }
+        }
+        return -1; 
+    }
+    
+    void main() {
+        int arr[10], i, key, result;
+        clrscr();
+        for (i = 0; i &lt; 10; i++)
+        {
+            printf("Enter Value of position %d\n", i+1);
+            scanf("%d", &arr[i]);
+        }
+    
+        printf("Enter Value to be searched\n");
+        scanf("%d", &key);
+        result = linearSearch(arr, 10, key);
+    
+        if (result == -1) {
+            printf("Element %d not found in the array.\n", key);
+        } else {
+            printf("Element %d found at position %d.\n", key, result+1);
+        }
+    
+        delay(5000);
+    }
+      </pre> 
+        
+    </p>
+   
+  
+   </div>
+   <div class="r">
+    
+    <h1>OUTPUT</h1>
+    <div id="result">
+       <pre>
+        Enter Value of position 1
+        38
+        Enter Value of position 2
+        40
+        Enter Value of position 3
+        29
+        Enter Value of position 4
+        48
+        Enter Value of position 5
+        28
+        Enter Value of position 6
+        19
+        Enter Value of position 7
+        39
+        Enter Value of position 8
+        48
+        Enter Value of position 9
+        59
+        Enter Value of position 10
+        29
+        Enter Value to be searched
+        48
+        Element 48 found at position 4. 
+</pre>
+    </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="../css1/arr.css">
+</head>
+<body>
+    
+    <h1>Link List</h1>
+    <h2>Program 1</h2>
+    <div class="box" id="pro1">
+    <h3>ENTER THE 2 POLYNOMIAL EQUATIONS DYNAMICALLY, ADD THEM AND DISPLAY THE ANSWER.</h3>
+    <p>
+      <pre>
+        #include &lt;stdio.h&gt;
+        #include &lt;alloc.h&gt;
+        #include &lt;conio.h&gt;
+        #include &lt;dos.h&gt;
+        struct Term
+        {
+            int coeff;
+            int power;
+            struct Term *next;
+        };
+        typedef struct Term term;
+        
+        int isEmpty(term *start)
+        {
+            if (start == NULL)
+            {
+                return 1;
+            }
+            return 0;
+        }
+        
+        int insert(term **start, term **end, int coeff, int pow)
+        {
+            term *nn = (term *)malloc(sizeof(term));
+            if (nn != NULL)
+            {
+                nn-&gt;coeff = coeff;
+                nn-&gt;power = pow;
+                nn-&gt;next = (*start);
+                if (*start == NULL)
+                {
+                    *end = nn;
+                }
+                (*start) = nn;
+                return 1;
+            }
+            return 0;
+        
+        }
+        
+        int insAtEnd(term **start, term **end, int coeff, int pow)
+        {
+            if (*end == NULL && *start == NULL)
+            {
+                return insert(start, end, coeff, pow);
+            }
+            else
+            {
+                term *nn = (term *)malloc(sizeof(term));
+                if (nn != NULL)
+                {
+                    nn-&gt;coeff = coeff;
+                    nn-&gt;power = pow;
+                    nn-&gt;next = NULL;
+                    (*end)-&gt;next = nn;
+                    (*end) = nn;
+                    return 1;
+                }
+            }
+            return 0;
+        }
+        
+        int freeAll(term **start)
+        {
+            term *temp;
+            if ((*start) == NULL)
+            {
+                return 0;
+            }
+            while ((*start) != NULL)
+            {
+                temp = *start;
+                (*start) = (*start)-&gt;next;
+                free(temp);
+            }
+            return 1;
+        }
+        void printeqs(term *start)
+        {
+            term *ptr = start;
+            while (ptr != NULL)
+            {
+                if (ptr-&gt;power != 0)
+                {
+                    if (ptr-&gt;coeff &gt; 0)
+                    {  
+                        if (ptr != start)
+                        {
+                            printf("+ %dx^%d ", ptr-&gt;coeff, ptr-&gt;power);
+                        }
+                        else{
+                            printf("%dx^%d ", ptr-&gt;coeff, ptr-&gt;power);
+                        }
+                    }
+                    else if (ptr-&gt;coeff &lt; 0)
+                    {
+                        printf("- %dx^%d ", ((-1)*ptr-&gt;coeff), ptr-&gt;power);
+                    }
+                }
+                else
+                {
+                    if (ptr-&gt;coeff &gt; 0)
+                    {
+                        printf("+ %d", (ptr-&gt;coeff));
+                    }
+                    else if (ptr-&gt;coeff &lt; 0)
+                    {
+                        printf("- %d", ((-1)*ptr-&gt;coeff));
+                    }
+                }
+                ptr = ptr-&gt;next;
+            }
+            printf("\n");
+        }
+        
+        term *addition(term *eq1, term *eq2, term **end)
+        {
+            term *temp = NULL;
+            while (eq1 != NULL && eq2 != NULL)
+            {
+                if (eq1-&gt;power &gt; eq2-&gt;power)
+                {
+                    insAtEnd(&temp, end, eq1-&gt;coeff, eq1-&gt;power);
+                    eq1 = eq1-&gt;next;
+                }
+                else if (eq1-&gt;power &lt; eq2-&gt;power)
+                {
+                    insAtEnd(&temp, end, eq2-&gt;coeff, eq2-&gt;power);
+                    eq2 = eq2-&gt;next;
+                }
+                else
+                {
+                    insAtEnd(&temp, end, (eq1-&gt;coeff) + (eq2-&gt;coeff), eq1-&gt;power);
+                    eq1 = eq1-&gt;next;
+                    eq2 = eq2-&gt;next;
+                }
+                
+            }
+            while (eq1 != NULL)
+            {
+                insAtEnd(&temp, end, eq1-&gt;coeff, eq1-&gt;power);
+                eq1 = eq1-&gt;next;
+            }
+            while (eq2 != NULL)
+            {
+                insAtEnd(&temp, end, eq2-&gt;coeff, eq2-&gt;power);
+                eq2 = eq2-&gt;next;
+            }
+            return temp;
+        }
+        
+        void main()
+        {
+            term *eq1 = NULL, *eq2 = NULL, *sum = NULL, *eq1end = NULL, *eq2end = NULL, *sumend = NULL;
+            int pow, i, coeff;
+            clrscr();
+            do
+            {
+                printf("Enter highest power of x of first equation (Upto 10)\n");
+                scanf("%d", &pow);
+            } while (pow &lt; 0 || pow &gt; 10);
+        
+            printf("Enter First Equation\n");
+        
+            for (i = 0; i &lt;= pow; i++)
+            {
+                printf("Enter Coefficient of x^%d\n", i);
+                scanf("%d", &coeff);
+                if (coeff != 0 || i == 0)
+                {
+                    insert(&eq1, &eq1end, coeff, i);
+                }
+            }
+        
+            do
+            {
+                printf("Enter highest power of x of second equation (Upto 10)\n");
+                scanf("%d", &pow);
+            } while (pow &lt; 0 || pow &gt; 10);
+        
+            printf("Enter Second Equation\n");
+        
+            for (i = 0; i &lt;= pow; i++)
+            {
+                printf("Enter Coefficient of x^%d\n", i);
+                scanf("%d", &coeff);
+                if (coeff != 0 || i == 0)
+                {
+                    insert(&eq2, &eq2end, coeff, i);
+                }
+            }
+        
+            printeqs(eq1);
+            printeqs(eq2);
+            printf("Addition of Above equations are\n");
+            sum = addition(eq1, eq2, &sumend);
+            printeqs(sum);
+            freeAll(&eq1);
+            freeAll(&eq2);
+            freeAll(&sum);
+            delay(5000);
+        }
+      </pre> 
+        
+    </p>
+   
+  
+   </div>
+   <div class="r">
+    
+    <h1>OUTPUT</h1>
+    <div id="result">
+       <pre>
+        Enter highest power of x of first equation (Upto 10)
+        3                                                                               
+        Enter First Equation                                                            
+        Enter Coefficient of x^0                                                        
+        2                                                                               
+        Enter Coefficient of x^1                                                        
+        5                                                                               
+        Enter Coefficient of x^2                                                        
+        0                                                                               
+        Enter Coefficient of x^3                                                        
+        2                                                                               
+        Enter highest power of x of second equation (Upto 10)                           
+        2                                                                               
+        Enter Second Equation                                                           
+        Enter Coefficient of x^0                                                        
+        4                                                                               
+        Enter Coefficient of x^1                                                        
+        -2                                                                              
+        Enter Coefficient of x^2                                                        
+        5                                                                               
+        2x^3 + 5x^1 + 2                                                                 
+        5x^2 - 2x^1 + 4                                                                 
+        Addition of Above equations are                                                 
+        2x^3 + 5x^2 + 3x^1 + 6
+</pre>
+    </div>
+</div>
+</body>
+
+</html>

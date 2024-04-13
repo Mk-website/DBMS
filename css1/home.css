@@ -1,0 +1,148 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.dsbg
+{
+  width: 100vw;
+  height: 70vh;
+  background-image: url("../img/dsa2.jpg");
+  border: 2px solid black;
+  margin-bottom: 5%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
+
+}
+.dsbg h1
+{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  margin-top: 20%;
+  font-size: 3.0em;
+}
+/*
+.dsbg button
+{
+  justify-content: center;
+  align-items: center;
+  text-align: center; 
+  color: red;
+  background-color: black;
+  border: 0.2em solid greenyellow;
+  margin:0 40%;
+  width: fit-content;
+  height: fit-content;
+  cursor: pointer;
+  border-radius: 5%;
+  font-size: 2.0em;
+  padding: 1%;
+  
+}
+*/
+.neon-button {
+  background-color: #000; /* Dark blue background color */
+      color: #fff; /* White text color */
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 0, 255, 0.7);
+      text-shadow: 0 0 10px rgba(0, 0, 255, 0.7);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease;
+      text-decoration: none; /* Remove underlines for anchor link */
+   
+}
+a
+{
+  color: #fff;
+}
+.neon-button:hover {
+  background-color: #0000ff;
+  box-shadow: 0 0 20px rgba(0, 0, 255, 0.9);
+  text-shadow: 0 0 20px rgba(0, 0, 255, 0.9);
+}
+.dsbg 
+{
+  text-align: center;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  
+}
+
+/* CSS for each card */
+.card {
+  flex: 1;
+  background-color: #000;
+  border-radius: 5px;
+  padding: 20px;
+  transition: box-shadow 0.3s, transform 0.3s; /* Smooth transitions for the glow effect and scaling */
+  position: relative;
+  overflow: hidden;
+  transform: scale(1); /* Initial scale */
+  height: auto;
+}
+
+/* CSS for card title */
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff; /* White text color */
+  margin: 0;
+  transition: color 0.3s; /* Smooth transition for text color */
+}
+
+/* CSS for card content */
+.card-content {
+  font-size: 16px;
+  color: #fff; /* White text color */
+  transition: color 0.3s; /* Smooth transition for text color */
+}
+
+/* Neon effect on hover */
+.card:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 0, 1); /* Neon green glow effect on hover */
+  transform: scale(1.05); /* Slight scale-up effect on hover */
+}
+
+/* CSS for the card image */
+.card-image {
+  width: 100%;
+  height: 50vh;
+  transition: filter 0.3s; /* Smooth transition for image brightness */
+}
+
+/* Image brightness on hover */
+.card:hover .card-image {
+  filter: brightness(1.5); /* Increase image brightness on hover */
+}
+
+@media (max-width: 1200px) {
+  .card {
+    flex: 0 1 50%; /* Full width for each card */
+    margin: 0 auto 5% auto;
+    width: 50%;
+  }
+  .card-image {
+    width: 100%;
+    height: 50vh;
+    transition: filter 0.3s;
+  }
+  .card-image img{
+    width: 100%;
+    height: 50vh;
+    transition: filter 0.3s;
+  }
+}
+
+body
+{
+  background-color: #000;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="../css1/arr.css">
+</head>
+<body>
+    
+    <h1>Searching Algorithms</h1>
+    <h2>Program 7</h2>
+    <div class="box" id="pro1">
+    <h3>ENTER A INTEGER ARRAY FROM THE USER, ENTER AN INTEGER VALUE AND PERFORM BINARY SEARCH ALGORITHM THROUGH RECURSION.</h3>
+    <p>
+      <pre>
+        #include &lt;stdio.h&gt;
+    #include &lt;conio.h&gt;
+    #include &lt;dos.h&gt;
+    int binarySearch(int arr[], int l, int u, int key) {
+        int mid = l+(u - l)/2;
+        if (l &gt; u)
+        {
+        return -1;
+        }
+        if (arr[mid] == key)
+        {
+        return mid;
+        }
+        else if (arr[mid] &gt; key){
+        u = mid-1;
+        }
+        else{
+        l = mid+1;
+        }
+    
+        return binarySearch(arr, l, u, key);
+    }
+    
+    void main() {
+        int arr[10], i, key, result;
+        clrscr();
+        for (i = 0; i &lt; 10; i++)
+        {
+        printf("Enter Value of position %d\n", i+1);
+        scanf("%d", &arr[i]);
+        }
+    
+        printf("Enter Value to be searched\n");
+        scanf("%d", &key);
+        result = binarySearch(arr, 0, 10, key);
+    
+        if (result == -1) {
+        printf("Element %d not found in the array.\n", key);
+        } else {
+        printf("Element %d found at position %d.\n", key, result+1);
+        }
+    
+        delay(5000);
+    }
+      </pre> 
+        
+    </p>
+   
+  
+   </div>
+   <div class="r">
+    
+    <h1>OUTPUT</h1>
+    <div id="result">
+       <pre>
+        Enter Value of position 1
+        2 
+        Enter Value of position 2
+        9
+        Enter Value of position 3
+        18
+        Enter Value of position 4
+        24
+        Enter Value of position 5
+        26
+        Enter Value of position 6
+        34
+        Enter Value of position 7
+        56
+        Enter Value of position 8
+        78
+        Enter Value of position 9
+        96
+        Enter Value of position 10
+        103
+        Enter Value to be searched
+        34
+        Element 34 found at position 6. 
+</pre>
+    </div>
+</div>
+</body>
+
+</html>

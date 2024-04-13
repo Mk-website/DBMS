@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css1/arr.css">
+</head>
+
+<body>
+
+    <h1>TREE</h1>
+    <h2>Program 4</h2>
+    <div class="box" id="pro1">
+        <h3>DISPLAY THE RIGHT VIEW OF BINARY TREE</h3>
+        <p>
+        <pre>
+
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+
+struct treeNode
+{
+    int data;
+    struct treeNode *left;
+    struct treeNode *right;
+};
+typedef struct treeNode TreeNode;
+struct queueNode
+{
+    TreeNode *data;
+    struct queueNode *next;
+};
+typedef struct queueNode QueueNode;
+
+TreeNode* newNode(int val) {
+    TreeNode* node = (TreeNode*)malloc(sizeof(TreeNode));
+    node-&gt;data = val;
+node-&gt;left = NULL;
+node-&gt;right = NULL;
+return node;
+
+n (QueueNode *)malloc(sizeof(QueueNode));
+
+
+ienqueue(QueueNode **rear, QueueNode **front, TreeNode *data)
+
+
+nn-&gt;next = NULL;
+QueueNode *nn;
+{
+if (nn == NULL)
+}
+    return 0;
+{
+nn-&gt;data = data;
+}
+if (*front == NULL)
+return 1;
+    *front = nn;
+
+e
+
+(*rear)-&gt;next = nn;    if ((*front) == NULL)*r = nn;return NULL;TNode *data = (*front)-&gt;data;TN* dequeue(QueueNode **rear, QueueNode **front)i(*front) == (*rear))QeNode *temp;*nt = *rear = NULL;else{t = (*front);rrn data;ii;(*front) = temp -&gt; next;front = front-&gt;next;    free(temp);}}v printRightView(TreeNode* root) {
+long queueSize(QueueNode *front){
+    frontrear = NULL;
+    for ( 0; front != NULL; i++)
+        rrn;
+    retur;
+    ee&amp;rear, &amp;front, root);
+
+    weront != NULL) {
+    Qee *front, *rear;
+
+    ir == NULL)
+    TN* node = dequeue(&amp;rear, &amp;front);
+
+printf("%d ", node-&gt;data);
+
+
+ilevelSize = queueSize(front);
+eeue(&amp;rear, &amp;front, node-&gt;left);
+f(int i = 0; i &lt; levelSize; i++) {
+enqueue(&amp;rear, &amp;front, node-&gt;right);
+if (i == levelSize-1) {
+}
+}
+
+if (node-&gt;left != NULL)
+TreeNode* root = newNode(1);
+if (node-&gt;right != NULL)
+root-&gt;right = newNode(3);
+}
+root-&gt;left-&gt;right = newNode(5);
+}
+root-&gt;right-&gt;right = newNode(7);
+int main(){
+    
+    root-&gt;left = newNode(2);
+    printRightView(root);
+    root-&gt;left-&gt;left = newNode(4);
+}
+                root-&gt;right-&gt;left = newNode(6);
+                root-&gt;right-&gt;left-&gt;right = newNode(8);
+                printf("Right View: ");
+                return 0;
+                
+      </pre>
+
+        </p>
+
+
+    </div>
+    
+    <div class="r">
+        <h1>OUTPUT</h1>
+        <div id="result">
+            <pre>
+    Right View: 1 3 7 8 
+            
+</pre>
+        </div>
+    </div>
+</body>
+
+
+</html>

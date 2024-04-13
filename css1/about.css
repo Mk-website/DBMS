@@ -1,0 +1,34 @@
+#about {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center align the content */
+    height: auto;
+    overflow: auto;
+  }
+  
+  #about h2 {
+    color: #333;
+    font-size: 24px; /* Increase the heading font size */
+  }
+  
+  #about p {
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Style the labels */
+  label {
+    display: block;
+    margin: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  label p {
+    margin: 8px 0;
+    font-size: 16px;
+    color: #555;
+  }

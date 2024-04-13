@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="../css1/arr.css">
+</head>
+<body>
+    
+    <h1>Link List</h1>
+    <h2>Program 11</h2>
+    <div class="box" id="pro1">
+    <h3>ENTER THE 2 POLYNOMIAL EQUATIONS DYNAMICALLY, MULTIPLY THEM AND DISPLAY THE ANSWER.</h3>
+    <p>
+      <pre>
+    #include &lt;stdio.h&gt;
+    #include &lt;alloc.h&gt;
+    #include &lt;conio.h&gt;
+    #include &lt;dos.h&gt;
+    struct Term
+    {
+        int coeff;
+        int power;
+        struct Term *next;
+    };
+    typedef struct Term term;
+    
+    int isEmpty(term *start)
+    {
+        if (start == NULL)
+        {
+            return 1;
+        }
+        return 0;
+    }
+    
+    int insert(term **start, term **end, int coeff, int pow)
+    {
+        term *nn = (term *)malloc(sizeof(term));
+        if (nn != NULL)
+        {
+            nn-&gt;coeff = coeff;
+            nn-&gt;power = pow;
+            nn-&gt;next = (*start);
+            if (*start == NULL)
+            {
+                *end = nn;
+            }
+            (*start) = nn;
+            return 1;
+        }
+        return 0;
+    
+    }
+    
+    int insAtEnd(term **start, term **end, int coeff, int pow)
+    {
+        if (*end == NULL && *start == NULL)
+        {
+            return insert(start, end, coeff, pow);
+        }
+        else
+        {
+            term *nn = (term *)malloc(sizeof(term));
+            if (nn != NULL)
+            {
+                nn-&gt;coeff = coeff;
+                nn-&gt;power = pow;
+                nn-&gt;next = NULL;
+                (*end)-&gt;next = nn;
+                (*end) = nn;
+                return 1;
+            }
+        }
+        return 0;
+    }
+    
+    int freeAll(term **start)
+    {
+        term *temp;
+        if ((*start) == NULL)
+        {
+            return 0;
+        }
+        while ((*start) != NULL)
+        {
+            temp = *start;
+            (*start) = (*start)-&gt;next;
+            free(temp);
+        }
+        return 1;
+    }
+    void printeqs(term *start)
+    {
+        term *ptr = start;
+        while (ptr != NULL)
+        {
+            if (ptr-&gt;power != 0)
+            {
+                if (ptr-&gt;coeff &gt; 0)
+                {  
+                    if (ptr != start)
+                    {
+                        printf("+ %dx^%d ", ptr-&gt;coeff, ptr-&gt;power);
+                    }
+                    else{
+                        printf("%dx^%d ", ptr-&gt;coeff, ptr-&gt;power);
+                    }
+                }
+                else if (ptr-&gt;coeff &lt; 0)
+                {
+                    printf("- %dx^%d ", ((-1)*ptr-&gt;coeff), ptr-&gt;power);
+                }
+            }
+            else
+            {
+                if (ptr-&gt;coeff &gt; 0)
+                {
+                    printf("+ %d", (ptr-&gt;coeff));
+                }
+                else if (ptr-&gt;coeff &lt; 0)
+                {
+                    printf("- %d", ((-1)*ptr-&gt;coeff));
+                }
+            }
+            ptr = ptr-&gt;next;
+        }
+        printf("\n");
+    }
+    
+    void removeDuplicates(term *start){
+        term *e1 = start, *e2, *temp;
+        while (e1 != NULL)
+        {
+            e2 = e1 -&gt; next;
+            while(e2 != NULL)
+            {
+                if(e1-&gt;power == e2-&gt;power)
+                {
+                    e1-&gt;coeff += e2-&gt;coeff;
+                    temp = e2;
+                    e2 = e2-&gt;next;
+                    e1-&gt;next = temp-&gt;next;
+                    free(temp);
+                }
+                else{
+                    e2 = e2-&gt;next;
+                }
+            }
+            e1 = e1-&gt;next;
+        }
+    }
+    
+    term *multiplication(term *eq1, term *eq2, term **end)
+    {
+        term *temp = NULL, *tempeq;
+        while (eq1 != NULL)
+        {
+            tempeq = eq2;
+            while(tempeq != NULL)
+            {
+                insAtEnd(&temp, end, (eq1-&gt;coeff)*(tempeq-&gt;coeff), (eq1-&gt;power)+(tempeq-&gt;power));
+                tempeq = tempeq-&gt;next;
+            }
+            eq1 = eq1-&gt;next;
+        }
+        removeDuplicates(temp);
+        return temp;
+    }
+    
+    void main()
+    {
+        term *eq1 = NULL, *eq2 = NULL, *prod = NULL, *eq1end = NULL, *eq2end = NULL, *prodend = NULL;
+        int pow, i, coeff;
+        clrscr();
+        do
+        {
+            printf("Enter highest power of x of first equation (Upto 10)\n");
+            scanf("%d", &pow);
+        } while (pow &lt; 0 || pow &gt; 10);
+    
+        printf("Enter First Equation\n");
+    
+        for (i = 0; i &lt;= pow; i++)
+        {
+            printf("Enter Coefficient of x^%d\n", i);
+            scanf("%d", &coeff);
+            if (coeff != 0 || i == 0)
+            {
+                insert(&eq1, &eq1end, coeff, i);
+            }
+        }
+    
+        do
+        {
+            printf("Enter highest power of x of second equation (Upto 10)\n");
+            scanf("%d", &pow);
+        } while (pow &lt; 0 || pow &gt; 10);
+    
+        printf("Enter Second Equation\n");
+    
+        for (i = 0; i &lt;= pow; i++)
+        {
+            printf("Enter Coefficient of x^%d\n", i);
+            scanf("%d", &coeff);
+            if (coeff != 0 || i == 0)
+            {
+                insert(&eq2, &eq2end, coeff, i);
+            }
+        }
+    
+        printeqs(eq1);
+        printeqs(eq2);
+        printf("Multiplication of Above equations are\n");
+        prod = multiplication(eq1, eq2, &prodend);
+        printeqs(prod);
+        freeAll(&eq1);
+        freeAll(&eq2);
+        freeAll(&prod);
+        delay(5000);
+    }
+      </pre> 
+        
+    </p>
+   
+  
+   </div>
+   <div class="r">
+    
+    <h1>OUTPUT</h1>
+    <div id="result">
+       <pre>
+Enter highest power of x of first equation (Upto 10)
+2                                                                               
+Enter First Equation                                                            
+Enter Coefficient of x^0
+3                                                                               
+Enter Coefficient of x^1                                                        
+5                                                                               
+Enter Coefficient of x^2                                                        
+2                                                                               
+Enter highest power of x of second equation (Upto 10)                           
+3                                                                               
+Enter Second Equation                                                           
+Enter Coefficient of x^0                                                        
+5                                                                               
+Enter Coefficient of x^1                                                        
+2                                                                               
+Enter Coefficient of x^2                                                        
+9                                                                               
+Enter Coefficient of x^3                                                        
+3                                                                               
+2x^2 + 5x^1 + 3                                                                 
+3x^3 + 9x^2 + 2x^1 + 5                                                          
+Multiplication of Above equations are                                           
+6x^5 + 33x^4 + 54x^3 + 27x^2 + 6x^1 + 15 
+</pre>
+    </div>
+</div>
+</body>
+
+</html>

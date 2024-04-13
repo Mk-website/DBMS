@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="../css1/arr.css">
+</head>
+<body>
+    
+    <div id="outputframe"><h2>Data Types in SQL</h2>
+        <p>In SQL, data types are used to specify the type of data that can be stored in a column of a table. Each column in a table must have a specific data type, which defines the kind of values that can be inserted into that column. SQL supports a wide range of data types, each designed to accommodate different types of data and optimize storage efficiency.</p>
+        <h2>Common data types in SQL:</h2>
+       <div class="p">
+        <table>
+            <tbody><tr>
+                <th>Data Type</th><th>
+                </th><th>Description</th><th>
+            </th></tr>
+            <tr>
+                <td>CHAR(size)</td><td>
+                </td><td>A FIXED length string (can contain letters, numbers, and special characters). The size parameter specifies the column length in characters - can be from 0 to 255. Default is 1</td><td>
+            </td></tr>
+            <tr>
+                <td>VARCHAR(size)</td><td>
+                </td><td>A VARIABLE length string (can contain letters, numbers, and special characters). The size parameter specifies the maximum column length in characters - can be from 0 to 65535</td><td>
+            </td></tr>
+            <tr>
+                <td>TEXT(size)</td><td>
+                </td><td>Holds a string with a maximum length of 65,535 bytes</td><td>
+            </td></tr>
+            <tr>
+                <td>TINYINT(size)</td><td>
+                </td><td>A very small integer. Signed range is from -128 to 127. Unsigned range is from 0 to 255. The size parameter specifies the maximum display width (which is 255)</td><td>
+            </td></tr>
+            <tr>
+                <td>BOOL</td><td>
+                </td><td>Zero is considered as false, nonzero values are considered as true.</td><td>
+            </td></tr>
+            <tr>
+                <td>INT(size)</td><td>
+                </td><td>A medium integer. Signed range is from -2147483648 to 2147483647. Unsigned range is from 0 to 4294967295. The size parameter specifies the maximum display width (which is 255)</td><td>
+            </td></tr>
+            <tr>
+                <td>BIGINT(size)</td><td>
+                </td><td>A large integer. Signed range is from -9223372036854775808 to 9223372036854775807. Unsigned range is from 0 to 18446744073709551615. The size parameter specifies the maximum display width (which is 255)</td><td>
+            </td></tr>
+            <tr>
+                <td>FLOAT(p)</td><td>
+                </td><td>A floating point number. MySQL uses the p value to determine whether to use FLOAT or DOUBLE for the resulting data type. If p is from 0 to 24, the data type becomes FLOAT(). If p is from 25 to 53, the data type becomes DOUBLE()</td><td>
+            </td></tr>
+            <tr>
+                <td>DOUBLE(size, d)</td><td>
+                </td><td>A normal-size floating point number. The total number of digits is specified in size. The number of digits after the decimal point is specified in the d parameter</td><td>
+            </td></tr>
+            <tr>
+                <td>DECIMAL(size, d)</td><td>
+                </td><td>An exact fixed-point number. The total number of digits is specified in size. The number of digits after the decimal point is specified in the d parameter. The maximum number for size is 65. The maximum number for d is 30. The default value for size is 10. The default value for d is 0.</td><td>
+            </td></tr>
+            <tr>
+                <td>DATE</td><td>
+                </td><td>A date. Format: YYYY-MM-DD. The supported range is from '1000-01-01' to '9999-12-31'</td><td>
+            </td></tr>
+            <tr>
+                <td>YEAR</td><td>
+                </td><td>	A year in four-digit format. Values allowed in four-digit format: 1901 to 2155, and 0000.
+                MySQL 8.0 does not support year in two-digit format.</td><td>
+            </td></tr>
+        </tbody></table>
+       </div>
+        
+        </div>
+</body>
+
+</html>

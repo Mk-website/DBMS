@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="../css1/arr.css">
+</head>
+<body>
+    
+    <h1>RECURSION</h1>
+    <h2>Program 7</h2>
+    <div class="box" id="pro1">
+    <h3>ENTER THE NUMBER FROM THE USER AND ADD ALL DIGITS OF THE NUMBER USING RECURSION.</h3>
+    <p>
+      <pre>
+        #include &lt;stdio.h&gt;
+
+            int sumOfDigits(int num) {
+                if (num == 0) {
+                    return 0;
+                } else {
+                    return num % 10 + sumOfDigits(num / 10);
+                }
+            }
+            
+            int main() {
+                int number;
+                
+                printf("Enter a number: ");
+                scanf("%d", &number);
+            
+                int sum = sumOfDigits(number);
+            
+                printf("The sum of the digits of %d is %d\n", number, sum);
+            
+                return 0;
+            }
+            
+      </pre> 
+        
+    </p>
+   
+  
+   </div>
+   <div class="r">
+    
+    <h1>OUTPUT</h1>
+    <div id="result">
+       <pre>
+        Enter a number: 2563
+        The sum of the digits of 2563 is 16
+</pre>
+    </div>
+</div>
+</body>
+
+</html>

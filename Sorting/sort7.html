@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="../css1/arr.css">
+</head>
+<body>
+    
+    <h1>MERGE SORT </h1>
+    <h2>Program 7</h2>
+    <div class="box" id="pro1">
+    <h3>ENTER A INTEGER ARRAY FROM THE USER AND PERFORM MERGE SORT ALGORITHM THROUGH ITERATION. ALSO CALCULATE THE WORST AND BEST COMPLEXITY WITH EXACT TIME.</h3>
+    <p>
+      <pre>
+        #include &lt;stdio.h&gt;
+        
+        #include &lt;time.h&gt;
+        
+        void merge(int arr[], int left, int mid, int right) {
+            int i, j, k;
+            int n1 = mid - left + 1;
+            int n2 = right - mid;
+        
+            int L[n1], R[n2];
+        
+            for (i = 0; i &lt; n1; i++)
+                L[i] = arr[left + i];
+            for (j = 0; j &lt; n2; j++)
+                R[j] = arr[mid + 1 + j];
+        
+            i = 0;
+            j = 0;
+            k = left;
+        
+            while (i &lt; n1 && j &lt; n2) {
+                if (L[i] &lt;= R[j]) {
+                    arr[k] = L[i];
+                    i++;
+                } else {
+                    arr[k] = R[j];
+                    j++;
+                }
+                k++;
+            }
+        
+            while (i &lt; n1) {
+                arr[k] = L[i];
+                i++;
+                k++;
+            }
+        
+            while (j &lt; n2) {
+                arr[k] = R[j];
+                j++;
+                k++;
+            }
+        }
+        
+        void mergeSort(int arr[], int n) {
+            int curr_size;
+            int left_start;
+        
+            for (curr_size = 1; curr_size &lt;= n - 1; curr_size = 2 * curr_size) {
+                for (left_start = 0; left_start &lt; n - 1; left_start += 2 * curr_size) {
+                    int mid = left_start + curr_size - 1;
+                    int right_end = (left_start + 2 * curr_size - 1 &lt; n - 1) ? (left_start + 2 * curr_size - 1) : (n - 1);
+                    merge(arr, left_start, mid, right_end);
+                }
+            }
+        }
+        
+        int main() {
+            int n=10, arr[10];
+            printf("Enter %d integers : ", n);
+            for (int i = 0; i &lt; n; i++) {
+                scanf("%d", &arr[i]);
+            }
+        
+            int worst_case[n];
+            int best_case[n];
+        
+            // Copy the original array for best-case scenario
+            for (int i = 0; i &lt; n; i++) {
+                worst_case[i] = arr[i];
+                best_case[i] = arr[i];
+            }
+        
+            clock_t start_time, end_time;
+        
+            // Worst-case time complexity
+            start_time = clock();
+            mergeSort(worst_case, n);
+            end_time = clock();
+            printf("Sorted array in worst case:\n");
+            for (int i = 0; i &lt; n; i++) {
+                printf("%d ", worst_case[i]);
+            }
+            printf("\nWorst case time taken: %.6f seconds\n", (double)(end_time - start_time) / CLOCKS_PER_SEC);
+        
+            // Best-case time complexity (already sorted array)
+            start_time = clock();
+            mergeSort(best_case, n);
+            end_time = clock();
+            printf("Sorted array in best case:\n");
+            for (int i = 0; i &lt; n; i++) {
+                printf("%d ", best_case[i]);
+            }
+            printf("\nBest case time taken: %.6f seconds\n", (double)(end_time - start_time) / CLOCKS_PER_SEC);
+        
+            return 0;
+        }
+        
+
+      </pre> 
+        
+    </p>
+   
+  
+   </div>
+   <div class="r">
+    
+    <h1>OUTPUT</h1>
+    <div id="result">
+       <pre>
+Enter 10 integers : 2
+3
+6
+5
+8
+9
+7
+4
+12
+25
+Sorted array in worst case:
+2 3 4 5 6 7 8 9 12 25
+Worst case time taken: 0.000000 seconds      
+Sorted array in best case:
+2 3 4 5 6 7 8 9 12 25
+Best case time taken: 0.000000 seconds 
+</pre>
+    </div>
+</div>
+</body>
+
+</html>

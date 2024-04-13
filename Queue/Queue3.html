@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="../css1/arr.css">
+</head>
+<body>
+    <div id="outputframe">
+        <h2>Droping Columns From Tables</h2>
+        <p>To drop (remove) a column from an existing table in MySQL, you use the ALTER TABLE statement with the DROP COLUMN clause. Here's the basic syntax:</p>
+        <h2>Syntax</h2>
+        <p>
+            <code>ALTER TABLE table_name DROP COLUMN column_name;</code>
+        </p>
+        <h2>Query</h2>
+        <div class="p">
+                        <code>ALTER TABLE student DROP COLUMN DOB;<br><br>
+            Query OK, 0 rows affected (0.17 sec)<br>
+            Records: 0  Duplicates: 0  Warnings: 0<br><br>
+            </code>
+            <code>DESC student;</code>
+            <table>
+                <tbody><tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Null</th>
+                    <th>Key</th>
+                    <th>Default</th>
+                    <th>Extra</th>
+                </tr>
+                <tr>
+                    <td>RollNo</td>
+                    <td>int</td>
+                    <td>NO</td>
+                    <td>PRI</td>
+                    <td>NULL</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>varchar(50)</td>
+                    <td>YES</td>
+                    <td></td>
+                    <td>NULL</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>PhoneNo</td>
+                    <td>varchar(10)</td>
+                    <td>YES</td>
+                    <td></td>
+                    <td>NULL</td>
+                    <td></td>
+                </tr>
+            </tbody></table>
+        </div>
+        </div>
+
+</html>

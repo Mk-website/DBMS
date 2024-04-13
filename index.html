@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css1/style.css">
+    <link rel="stylesheet" href="css1/utils.css">
+    <link rel="stylesheet" href="css1/mobile.css">
+    <link rel="stylesheet" href="css1/home.css">
+</head>
+<body>
+    <nav class="navigation max-width-1 m-auto">
+        <div class="nav-left">
+            <a href="/">
+                <span><img src="img/mylogo.png" width="94px" alt=""></span>
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="DS.html">Data Structure</a></li>
+                <li><a href="About.html">About</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <form action="/search.html" method="get">
+                <input class="form-input" type="text" name="query" placeholder="Search Program">
+                <button class="btn">Search</button>
+            </form>
+        </div>
+
+    </nav>
+    <div class="max-width-1 m-auto">
+        <hr>
+    </div>
+    <div class="dsbg">
+        <h1>Data Structure And Algorithms</h1>
+        <button class="neon-button"><a href="#card2">Get Started</a></button>
+    </div>
+            <div class="m-auto1 my-2">
+            <div class="card-container">
+                <div class="card" id="card1" onclick="func()">
+                  <img class="card-image" src="img/cpp.png" alt="Image 1">
+                  <h2 class="card-title">DBMS Notes</h2>
+                  <p class="card-content">Importent Notes on DBMS</p>
+                </div>
+            
+                <div class="card" id="card2">
+                  <a href="DS.html"><img class="card-image" src="img/c.png" alt="Image 2"></a>
+                  <h2 class="card-title">MySQL</h2>
+                  <p class="card-content">MySQL Command</p>
+                </div>
+            
+                <div class="card" id="card3" onclick="func()">
+                  <img class="card-image" src="img/java.webp" alt="Image 3">
+                  <h2 class="card-title">Pl/SQL</h2>
+                  <p class="card-content">Pl/SQL </p>
+                </div>
+              </div>
+            </div>
+            <div class="footer">
+                <p>Copyright &copy; CodeLearner.com </p>
+                <a href="https://www.vecteezy.com/free-vector/typewriter">Vector Credits: Vecteezy</a>
+            </div>
+</body>
+<script>
+  function func() {
+    alert("Comming soon!!");
+  }
+</script>
+</html>

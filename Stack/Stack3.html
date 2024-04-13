@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="../css1/arr.css">
+</head>
+<body>
+    <div id="outputframe">
+        <h2>Describe Tables</h2>
+        <p>In MySQL, you can use the DESCRIBE or DESC command to display information about the structure of a table, including column names, data types, and constraints. Both DESCRIBE and DESC are equivalent and can be used interchangeably. Here's how you would use them:</p>
+        <h2>Syntax</h2>
+        <p>
+            <code>DESCRIBE table_name;</code><br><br>
+            Or<br><br>
+            <code>DESC table_name;</code>
+        </p>
+        <h2>Query</h2>
+       <div class="p">
+            <code>USE school;</code><br><br>
+            Database changed<br><br>
+            <code>DESC student;</code>
+            <table>
+                <tbody><tr>
+                    <th>Field</th>
+                    <th>Type</th>
+                    <th>Null</th>
+                    <th>Key</th>
+                    <th>Default</th>
+                    <th>Extra</th>
+                </tr>
+                <tr>
+                    <td>RollNo</td>
+                    <td>int</td>
+                    <td>NO</td>
+                    <td>PRI</td>
+                    <td>NULL</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>varchar(50)</td>
+                    <td>YES</td>
+                    <td></td>
+                    <td>NULL</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>PhoneNo</td>
+                    <td>varchar(10)</td>
+                    <td>YES</td>
+                    <td></td>
+                    <td>NULL</td>
+                    <td></td>
+                </tr>
+            </tbody></table>
+        </div>
+        </div>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtered Search Engine</title>
+    <style>
+        /* Add your CSS styling here */
+    </style>
+</head>
+<body>
+    <h1>Filtered Search Engine</h1>
+
+    <!-- Search input -->
+    <input type="text" id="searchInput" placeholder="Search">
+
+    <!-- Filter options -->
+    <label for="categoryFilter">Category:</label>
+    <select id="categoryFilter">
+        <option value="all">All</option>
+        <option value="technology">Technology</option>
+        <option value="science">Science</option>
+        <option value="business">Business</option>
+    </select>
+
+    <!-- Results container -->
+    <div id="resultsContainer"></div>
+
+    <script>
+        // Sample data (replace with your data)
+        const data = [
+            { title: 'Article 1', category: 'technology' },
+            { title: 'Article 2', category: 'science' },
+            { title: 'Article 3', category: 'business' },
+            // Add more data as needed
+        ];
+
+        // Function to filter results based on search input and category filter
+        function filterResults() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const categoryFilter = document.getElementById('categoryFilter').value.toLowerCase();
+
+            const filteredData = data.filter(item =>
+                (item.title.toLowerCase().includes(searchInput) || searchInput === '') &&
+                (categoryFilter === 'all' || item.category === categoryFilter)
+            );
+
+            displayResults(filteredData);
+        }
+
+        // Function to display results in the results container
+        function displayResults(results) {
+            const resultsContainer = document.getElementById('resultsContainer');
+            resultsContainer.innerHTML = '';
+
+            if (results.length === 0) {
+                resultsContainer.innerHTML = '<p>No results found.</p>';
+            } else {
+                results.forEach(item => {
+                    const resultItem = document.createElement('div');
+                    resultItem.innerHTML = `<h3>${item.title}</h3><p>Category: ${item.category}</p>`;
+                    resultsContainer.appendChild(resultItem);
+                });
+            }
+        }
+
+        // Initial display of results
+        filterResults();
+
+        // Event listeners for input and filter changes
+        document.getElementById('searchInput').addEventListener('input', filterResults);
+        document.getElementById('categoryFilter').addEventListener('change', filterResults);
+    </script>
+</body>
+</html>
