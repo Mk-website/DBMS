@@ -78,13 +78,11 @@
   text-align: center;
   background: #063146;
   
-}
-.sidebar header a
-{
-  text-decoration: none;
   color: white;
   font-weight: bold;
+  
 }
+
 .sidebar ul li i{
   display: block;
   height: 100%;

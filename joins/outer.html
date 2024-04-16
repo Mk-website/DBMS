@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css1/arr.css">
+</head>
+<body>
+    <div id="outputframe"> <h2>Outer Joins</h2>
+        <p>Outer joins in SQL are used to retrieve data from multiple tables while also including unmatched rows from one or both tables in the result set. There are two main types of outer joins:</p>
+        <p><b><u>LEFT OUTER JOIN (or LEFT JOIN) : </u></b>A left outer join returns all rows from the left table (the first table mentioned in the query), and the matched rows from the right table. If there are no matching rows in the right table, NULL values are returned for the columns from the right table.</p>
+        <h2>Syntax</h2>
+        <p><code>SELECT columns FROM table1 LEFT OUTER JOIN table2 ON table1.column_name = table2.column_name;</code></p>
+        <p><b><u>RIGHT OUTER JOIN (or RIGHT JOIN) : </u></b>A right outer join returns all rows from the right table (the second table mentioned in the query), and the matched rows from the left table. If there are no matching rows in the left table, NULL values are returned for the columns from the left table.</p>
+        <h2>Syntax</h2>
+        <p><code>SELECT columns FROM table1 RIGHT OUTER JOIN table2 ON table1.column_name = table2.column_name;</code></p>
+        <div class ="p"><table class="custTable">
+            <caption>Example Table : Customers</caption>
+        
+    <tbody><tr>
+        <th>customerID</th>
+        <th>CustomerName</th>
+        <th>ContactNo</th>
+        <th>Country</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Manjit</td>
+        <td>6283659862</td>
+        <td>Germany</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Anjali</td>
+        <td>7812569871</td>
+        <td>Mexico</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Aman</td>
+        <td>7639927794</td>
+        <td>Mexico</td>
+    </tr></tbody></table>
+        <table class="orderTable">
+            <caption>Example Table : Orders</caption>
+        
+    <tbody><tr>
+        <th>OrderID</th>
+        <th>customerId</th>
+        <th>OrderDate</th>
+    </tr>
+    <tr>
+        <td>10308</td>
+        <td>2</td>
+        <td>1996-09-18</td>
+    </tr>
+    <tr>
+        <td>10309</td>
+        <td>37</td>
+        <td>1996-09-19</td>
+    </tr>
+    <tr>
+        <td>10310</td>
+        <td>77</td>
+        <td>1996-09-20</td>
+    </tr></tbody></table>
+        </div>
+        <h2>Query</h2>
+        <div class ="p">
+        SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate FROM Orders LEFT OUTER JOIN Customers ON Orders.customerID=Customers.customerID;
+        <table>    
+            <tbody><tr>
+                <th>OrderID</th>
+                <th>CustomerName</th>
+                <th>OrderDate</th>
+            </tr>
+            <tr>
+                <td>10308</td>
+                <td>Anjali</td>
+                <td>1996-09-18</td>
+            </tr>
+            <tr>
+                <td>10309</td>
+                <td>NULL</td>
+                <td>1996-09-19</td>
+            </tr>
+            <tr>
+                <td>10310</td>
+                <td>NULL</td>
+                <td>1996-09-20</td>
+            </tr>
+        </tbody></table>
+        SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate FROM Orders RIGHT OUTER JOIN Customers ON Orders.customerID=Customers.customerID;
+        <table>    
+            <tbody><tr>
+                <th>OrderID</th>
+                <th>CustomerName</th>
+                <th>OrderDate</th>
+            </tr>
+            <tr>
+                <td>NULL</td>
+                <td>Manjit</td>
+                <td>NULL</td>
+            </tr>
+            <tr>
+                <td>10308</td>
+                <td>Anjali</td>
+                <td>1996-09-18</td>
+            </tr>
+            <tr>
+                <td>NULL</td>
+                <td>Aman</td>
+                <td>NULL</td>
+            </tr>
+        </tbody></table>
+        </div>
+
+        </div>
+</body>
+</html>

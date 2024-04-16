@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css1/arr.css">
+</head>
+</head>
+<body>
+    <div id="outputframe"><h2>Example Program</h2>
+        <p>Let's consider a simple PL/SQL block that performs division and handles the ZERO_DIVIDE predefined exception:</p>
+        <pre>DECLARE
+numerator NUMBER := 10;
+denominator NUMBER := 0;
+result NUMBER;
+BEGIN
+result := numerator / denominator;
+DBMS_OUTPUT.PUT_LINE('Result of division: ' || result);
+EXCEPTION
+WHEN ZERO_DIVIDE THEN
+    DBMS_OUTPUT.PUT_LINE('Error: Division by zero');
+WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('Error: An unexpected error occurred');
+END;</pre>
+<h2>Output</h2>
+
+    <p>Error: Division by zero</p></div>
+</body>
+</html>

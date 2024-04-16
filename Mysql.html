@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mk-Website</title>
+    <link rel="stylesheet" href="css1/style.css">
+    <link rel="stylesheet" href="css1/utils.css">
+    <link rel="stylesheet" href="css1/mobile.css">
+</head>
+<body>
+    <nav class="navigation max-width-1 m-auto">
+        <div class="nav-left">
+            <a href="/">
+                <span><img src="img/mylogo.png" width="94px" alt=""></span>
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="PlSql.html">Pl/SQL</a></li>
+                
+                <li><a href="About.html">About</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <form id="search-form" action="search.html" method="get">
+                <input class="form-input" type="text" id="search-input" list="program-list" placeholder="Program Search">
+                <datalist id="program-list">
+
+                </datalist>
+                <button class="btn" type="button" onclick="searchProgram()">Search</button> </form>
+            
+        </div>
+
+    </nav>
+    <div class="max-width-1 m-auto">
+        <hr>
+    </div>
+            <div class="sidebar">
+                <header>MySQL</header>
+                <hr>
+                <header>Basics of MySQL</header>
+                <ul>
+                    <select  id="linkSelector2" class="op">
+                 <option value="Mysql/intro.html"><li><i>Introduction</i></li></option>
+                 <option value="Mysql/datatype.html"><li><i>Data Types</i></li></option>
+                    </select>
+                </ul>
+                <header>Database</header>
+                <ul>
+                    <select  id="linkSelector3" class="op">
+                 <option value="database/db1.html"><li><i>Craete Database</i></li></option>
+                 <option value="database/db2.html"><li><i>Show Database</i></li></option>
+                 <option value="database/db3.html"><li><i>Drop Database</i></li></option>
+                 <option value="database/db4.html"><li><i>Use Database</i></li></option>
+                
+                    </select>
+                </ul>
+                
+                <header>Tables</header>
+                <ul>
+                    <select  id="linkSelector5" class="op">
+                 <option value="table/table1.html"><li><i>Create Tables</i></li></option>
+                 <option value="table/table2.html"><li><i>Show Tables</i></li></option>
+                 <option value="table/table3.html"><li><i>DescribeTables</i></li></option>
+                 <option value="table/table4.html"><li><i>Drop Tables</i></li></option>
+                 
+                    </select>
+                </ul>
+                <header>Alter</header>
+                <ul>
+                    <select  id="linkSelector6" class="op">
+                 <option value="Alter/Alter1.html"><li><i>Add Column</i></li></option>
+                 <option value="Alter/Alter2.html"><li><i>Drop Column</i></li></option>
+                 <option value="Alter/Alter3.html"><li><i>Modify Column</i></li></option>
+
+                    </select>
+                </ul>
+                <header>Insert</header>
+                <ul>
+                    <select  id="linkSelector7" class="op">
+                 <option value="insert/insert.html"><li><i>Insert value into a table</i></li></option>
+              
+                    </select>
+                </ul>
+               
+                <header>Delete</header>
+                <ul>
+                    <select  id="linkSelector9" class="op">
+                 <option value="Delete/Delete.html"><li><i>Delete Row from a table</i></li></option>
+                    </select>
+                </ul>
+                <header>Update</header>
+                <ul>
+                    <select  id="linkSelector4" class="op">
+                 <option value="Update/update1.html"><li><i>Updating value of a cell</i></li></option>
+               
+                    </select>
+                </ul>
+                <header>Select</header>
+                <ul>
+                    <select id="linkSelecto" class="op">
+                        <option value="select/select1.html"><li><i>Geting value from a table</i></li></option>
+                        <option value="select/select2.html"><li><i>Conditional retrieval of rowa</i></li></option>
+                        <option value="select/select3.html"><li><i>Matching a pattern from a table</i></li></option>
+   
+                        
+                    </select>
+                </ul>
+                <header>Clauses</header>
+                <ul>
+                    <select  id="linkSelector8" class="op">
+                 
+                 <option value="Clauses/Clauses1.html"><li><i>Group By</i></li></option>
+                 <option value="Clauses/Clauses2.html"><li><i>Having</i></li></option>
+                 <option value="Clauses/Clauses3.html"><li><i>Order By</i></li></option>
+                 <option value="Clauses/Clauses4.html"><li><i>Limit</i></li></option>
+                 <option value="Clauses/Clauses5.html"><li><i>Offset</i></li></option>
+        
+                    </select>
+                </ul>
+                <header>View</header>
+                <ul>
+                    <select  id="linkSelector11" class="op">
+                 <option value="view/Delview.html"><li><i>Creating View</i></li></option>
+                 <option value="view/view1.html"><li><i>Creating View</i></li></option>
+                 <option value="view/view2.html"><li><i>Deleting view</i></li></option>
+    </select>
+    </ul>
+    
+                 <header>Managing Privileges</header>
+                 <ul>
+                     <select  id="linkSelector12" class="op">
+                  
+                  <option value="privileges/grant.html"><li><i>Grant</i></li></option>
+                  <option value="privileges/Revoke.html"><li><i>Revoke</i></li></option>
+     
+                    </select>
+                </ul>
+                <header>Transaction Management</header>
+                <ul>
+                    <select  id="linkSelector13" class="op">
+                 
+                 <option value="Transacṭion/intro.html"><li><i>Introduction</i></li></option>
+                 <option value="Transacṭion/example.html"><li><i>Example Program</i></li></option>
+    </select>
+    </ul>
+    <header>Joins</header>
+    <ul>
+        <select  id="linkSelector14" class="op">
+     
+     <option value="Joins/Equi.html"><li><i>Equi Join</i></li></option>
+     <option value="Joins/Cartesian.html"><li><i>Cartesian Join</i></li></option>
+     <option value="Joins/outer.html"><li><i>Outer Join</i></li></option>
+     <option value="Joins/self.html"><li><i>Self Join</i></li></option>
+
+    </select>
+</ul>
+            </div>
+            <div class="m-auto content max-width-1 my-2">
+            <div class="main">
+                <div class="iframe-container">
+                    <iframe id="iframe" src="Mysql/intro.html" frameborder="1" name="Program"></iframe>
+                </div>
+        </div>
+            </div>
+    
+            <div class="footer">
+                <p>Copyright &copy; CodeLearner.com </p>
+                <a href="https://www.vecteezy.com/free-vector/typewriter">Vector Credits: Vecteezy</a>
+            </div>
+</body>
+<script src="javascript/main.js">
+
+</script>
+
+</html>

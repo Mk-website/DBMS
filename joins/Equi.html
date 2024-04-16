@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css1/arr.css">
+</head>
+<body>
+    <div id="outputframe"> <h2>Equi Join</h2>
+        <p>Equi joins in SQL are a specific type of join where the condition for joining tables is based on the equality of values in specified columns. There are two main types of equi joins:</p>
+        <p><b><u>Inner Equi Join : </u></b>An inner equi join returns only the rows that have matching values in both tables based on the specified join condition.</p>
+        <h2>Syntax</h2>
+        <p><code>SELECT columns FROM table1 INNER JOIN table2 ON table1.column_name = table2.column_name;</code></p>
+        <p><b><u>Outer Equi Join : </u></b>An outer equi join returns all the rows from both tables, along with the matched rows based on the join condition.There are two types of outer equi joins: LEFT OUTER JOIN and RIGHT OUTER JOIN.</p>
+        <h2>Syntax</h2>
+        <p><code>SELECT columns FROM table1 LEFT OUTER JOIN table2 ON table1.column_name = table2.column_name;</code><br><br>
+        OR<br><br>
+        SELECT columns FROM table1 RIGHT OUTER JOIN table2 ON table1.column_name = table2.column_name;</p>
+        <div class="p"><table class="custTable">
+            <caption>Example Table : Customers</caption>
+        
+    <tbody><tr>
+        <th>customerID</th>
+        <th>CustomerName</th>
+        <th>ContactNo</th>
+        <th>Country</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Manjit</td>
+        <td>6283659862</td>
+        <td>Germany</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Anjali</td>
+        <td>7812569871</td>
+        <td>Mexico</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Aman</td>
+        <td>7639927794</td>
+        <td>Mexico</td>
+    </tr></tbody></table>
+        <table class="orderTable">
+            <caption>Example Table : Orders</caption>
+        
+    <tbody><tr>
+        <th>OrderID</th>
+        <th>customerId</th>
+        <th>OrderDate</th>
+    </tr>
+    <tr>
+        <td>10308</td>
+        <td>2</td>
+        <td>1996-09-18</td>
+    </tr>
+    <tr>
+        <td>10309</td>
+        <td>37</td>
+        <td>1996-09-19</td>
+    </tr>
+    <tr>
+        <td>10310</td>
+        <td>77</td>
+        <td>1996-09-20</td>
+    </tr></tbody></table>
+        </div>
+        <h2>Query</h2>
+       <div class="p">
+        SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate FROM Orders INNER JOIN Customers ON Orders.customerID=Customers.customerID;
+        <table>
+            <tbody><tr>
+                <th>OrderID</th>
+                <th>CustomerName</th>
+                <th>OrderDate</th>
+            </tr>
+            <tr>
+                <td>10308</td>
+                <td>Anjali</td>
+                <td>1996-09-18</td>
+            </tr>
+        </tbody></table>
+        SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate FROM Orders LEFT OUTER JOIN Customers ON Orders.customerID=Customers.customerID;
+        <table>    
+            <tbody><tr>
+                <th>OrderID</th>
+                <th>CustomerName</th>
+                <th>OrderDate</th>
+            </tr>
+            <tr>
+                <td>10308</td>
+                <td>Anjali</td>
+                <td>1996-09-18</td>
+            </tr>
+            <tr>
+                <td>10309</td>
+                <td>NULL</td>
+                <td>1996-09-19</td>
+            </tr>
+            <tr>
+                <td>10310</td>
+                <td>NULL</td>
+                <td>1996-09-20</td>
+            </tr>
+        </tbody></table>
+        SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate FROM Orders RIGHT OUTER JOIN Customers ON Orders.customerID=Customers.customerID;
+        <table>    
+            <tbody><tr>
+                <th>OrderID</th>
+                <th>CustomerName</th>
+                <th>OrderDate</th>
+            </tr>
+            <tr>
+                <td>NULL</td>
+                <td>Manjit</td>
+                <td>NULL</td>
+            </tr>
+            <tr>
+                <td>10308</td>
+                <td>Anjali</td>
+                <td>1996-09-18</td>
+            </tr>
+            <tr>
+                <td>NULL</td>
+                <td>Aman</td>
+                <td>NULL</td>
+            </tr>
+        </tbody></table>
+        </div>
+
+        </div>
+</body>
+</html>

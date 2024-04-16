@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css1/arr.css">
+</head>
+</head>
+<body>
+    <div id="outputframe"><h2>Implicit Cursors</h2>
+        <p>These cursors are automatically created by the database system for SQL statements that don't explicitly use cursor declarations. They are used for simple queries that return a single result set.</p>
+        <h2>Syntax</h2>
+        <pre>BEGIN
+SQL statement; -- The SQL statement that returns a result set
+-- Processing logic here
+END;</pre>
+        <h2>Example Program</h2>
+        <pre>            <table class="extable"><caption>Example Table : student</caption>
+    <tbody><tr>
+        <th>RollNo</th>
+        <th>Name</th>
+        <th>PhoneNo</th>
+        <th>Class</th>
+        <th>Marks</th>
+        <th>City</th>
+    </tr>
+    <tr>
+        <td>4201</td>
+        <td>Manjit</td>
+        <td>9688258565</td>
+        <td>BCA-I</td>
+        <td>296</td>
+        <td>Chandigarh</td>
+    </tr>
+    <tr>
+        <td>4202</td>
+        <td>Anjali</td>
+        <td>7812569871</td>
+        <td>BCA-I</td>
+        <td>246</td>
+        <td>Punjab</td>
+    </tr>
+    <tr>
+        <td>4203</td>
+        <td>Aman</td>
+        <td>7639927794</td>
+        <td>BCA-I</td>
+        <td>286</td>
+        <td>Punjab</td>
+    </tr>
+    <tr>
+        <td>4204</td>
+        <td>Asha</td>
+        <td>6259927794</td>
+        <td>BCA-I</td>
+        <td>156</td>
+        <td>Haryana</td>
+    </tr></tbody></table>
+        </pre>
+        <pre>DECLARE
+noOfRows number;
+BEGIN
+update student set class = 'BCA-II' where marks &gt; 200;
+noOfRows := SQL%ROWCOUNT;
+dbms_output.put_line(noOfRows || ' Rows Updated Successfully');
+END;
+        </pre>
+        <h2>Output</h2>
+        <p>3 Rows Updated Successfully</p>
+        </div>
+</body>
+</html>

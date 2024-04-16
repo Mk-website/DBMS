@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="../css1/arr.css">
+</head>
+<body>
+    <div id="outputframe"> <h2>Updating values</h2>
+        <p>To update data in a MySQL table, you use the UPDATE statement. Here's the basic syntax:</p>
+        <h2>Syntax</h2>
+        <div class="dark">
+            <h2>Updating a value of column(s)</h2>
+            <p>
+                <code>UPDATE table_name SET column1 = value1, column2 = value2, ...;</code>
+            </p>
+            <h2>Updating a value of particular columns</h2>
+            <p>
+                <code>UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE condition;</code>
+            </p>
+        </div>
+        <div class="p">
+        <table>
+            <caption>Example Table : student</caption>
+            <tbody><tr>
+                <th>RollNo</th>
+                <th>Name</th>
+                <th>PhoneNo</th>
+                <th>Class</th>
+            </tr>
+            <tr>
+                <td>4201</td>
+                <td>Manjit</td>
+                <td>9688258565</td>
+                <td>NULL</td>
+            </tr>
+            <tr>
+                <td>4202</td>
+                <td>Anjali</td>
+                <td>NULL</td>
+                <td>NULL</td>
+            </tr>
+            <tr>
+                <td>4203</td>
+                <td>Aman</td>
+                <td>7639927794</td>
+                <td>NULL</td>
+            </tr>
+            <tr>
+                <td>4204</td>
+                <td>Asha</td>
+                <td>6259927794</td>
+                <td>NULL</td>
+            </tr>
+            </tbody></table>
+        </div>
+        <h2>Query</h2>
+       <div class="p">UPDATE student SET class = 'BCA-I';
+        <table>
+            <tbody><tr>
+                <th>RollNo</th>
+                <th>Name</th>
+                <th>PhoneNo</th>
+                <th>Class</th>
+            </tr>
+            <tr>
+                <td>4201</td>
+                <td>Manjit</td>
+                <td>9688258565</td>
+                <td>BCA-I</td>
+            </tr>
+            <tr>
+                <td>4202</td>
+                <td>Anjali</td>
+                <td>NULL</td>
+                <td>BCA-I</td>
+            </tr>
+            <tr>
+                <td>4203</td>
+                <td>Aman</td>
+                <td>7639927794</td>
+                <td>BCA-I</td>
+            </tr>
+            <tr>
+                <td>4204</td>
+                <td>Asha</td>
+                <td>6259927794</td>
+                <td>BCA-I</td>
+            </tr>
+        </tbody></table>
+    </div>
+        <div class="p">UPDATE table_name SET PhoneNo = '7812569871' WHERE RollNo = '4202';
+        <table>
+            <tbody><tr>
+                <th>RollNo</th>
+                <th>Name</th>
+                <th>PhoneNo</th>
+                <th>Class</th>
+            </tr>
+            <tr>
+                <td>4201</td>
+                <td>Manjit</td>
+                <td>9688258565</td>
+                <td>BCA-I</td>
+            </tr>
+            <tr>
+                <td>4202</td>
+                <td>Anjali</td>
+                <td>7812569871</td>
+                <td>BCA-I</td>
+            </tr>
+            <tr>
+                <td>4203</td>
+                <td>Aman</td>
+                <td>7639927794</td>
+                <td>BCA-I</td>
+            </tr>
+            <tr>
+                <td>4204</td>
+                <td>Asha</td>
+                <td>6259927794</td>
+                <td>BCA-I</td>
+            </tr>
+        </tbody></table>
+    </div></div>
+</body>
+
+</html>

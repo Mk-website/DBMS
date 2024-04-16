@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css1/arr.css">
+</head>
+<body>
+    <div id="outputframe"><h2>Transaction Management</h2>
+        <p>Transaction management in MySQL allows you to group multiple SQL statements into a single unit of work, ensuring that either all the statements are executed successfully or none of them are applied. This helps maintain data integrity and consistency within the database. MySQL supports transaction management using the START TRANSACTION, COMMIT, and ROLLBACK statements.</p>
+        <h2>Starting New Transaction:</h2>
+        <p><code>START TRANSACTION;</code></p>
+        <p>This statement marks the beginning of a transaction. It signifies the start of a sequence of SQL statements that will be treated as a single unit of work.</p>
+        <h2>Commiting Changes in Transaction:</h2>
+        <p><code>COMMIT;</code></p>
+        <p>This statement permanently saves the changes made during the current transaction. Once committed, the changes become visible to other database sessions.</p>
+        <h2>Roll back changes in Transaction:</h2>
+        <p><code>ROLLBACK;</code></p>
+        <p>This statement rolls back (undoes) any changes made during the current transaction. It effectively cancels the transaction and restores the database to its state before the transaction began.</p>
+        
+        </div>
+</body>
+</html>

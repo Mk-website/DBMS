@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="outputframe"><h2>Example Program</h2>
+        <p>Program to show the working of Triggers</p>
+        <h2>Program</h2>
+        <pre>            <table class="extable"><caption>Example Table : student</caption>
+    <tbody><tr>
+        <th>RollNo</th>
+        <th>Name</th>
+        <th>PhoneNo</th>
+        <th>Class</th>
+        <th>Marks</th>
+        <th>City</th>
+    </tr>
+    <tr>
+        <td>4201</td>
+        <td>Manjit</td>
+        <td>9688258565</td>
+        <td>BCA-I</td>
+        <td>296</td>
+        <td>Chandigarh</td>
+    </tr>
+    <tr>
+        <td>4202</td>
+        <td>Anjali</td>
+        <td>7812569871</td>
+        <td>BCA-I</td>
+        <td>246</td>
+        <td>Punjab</td>
+    </tr>
+    <tr>
+        <td>4203</td>
+        <td>Aman</td>
+        <td>7639927794</td>
+        <td>BCA-I</td>
+        <td>286</td>
+        <td>Punjab</td>
+    </tr>
+    <tr>
+        <td>4204</td>
+        <td>Asha</td>
+        <td>6259927794</td>
+        <td>BCA-I</td>
+        <td>156</td>
+        <td>Haryana</td>
+    </tr></tbody></table>
+        </pre>
+        <pre>CREATE OR REPLACE TRIGGER cstud  
+BEFORE UPDATE ON student 
+fOR EACH ROW 
+BEGIN 
+IF :NEW.Marks &gt; 300 THEN 
+    :NEW.Marks := :OLD.Marks;
+    dbms_output.put_line('Marks should be less than 300!'); 
+END IF; 
+END; </pre>
+<h2>Output</h2>
+        <p>TRIGGER CREATED</p>
+        <h2>Executing Trigger</h2>           
+<pre>BEGIN 
+UPDATE student SET Marks = 345 where RollNo = '4204'; 
+END;</pre>
+        <h2>Output</h2>
+        <p>Marks should be less than 300!</p>
+        </div>
+</body>
+</html>

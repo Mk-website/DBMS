@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css1/arr.css">
+</head>
+
+<body>
+    <div id="outputframe"> <h2>Creating Views</h2>
+        <p>Here's how you can create a view in MySQL:</p>
+        <h2>Syntax</h2>
+        <p>
+            <code>CREATE VIEW view_name AS SELECT column1, column2, ... FROM table_name WHERE condition;</code>
+        </p>
+        <div class="p">
+        <table class="extable">
+            <caption>Example Table : student</caption>
+        
+    <tbody><tr>
+        <th>RollNo</th>
+        <th>Name</th>
+        <th>PhoneNo</th>
+        <th>Class</th>
+        <th>Marks</th>
+        <th>City</th>
+    </tr>
+    <tr>
+        <td>4201</td>
+        <td>Abhishek</td>
+        <td>9688258565</td>
+        <td>BCA-I</td>
+        <td>296</td>
+        <td>Chandigarh</td>
+    </tr>
+    <tr>
+        <td>4202</td>
+        <td>Anjali</td>
+        <td>7812569871</td>
+        <td>BCA-I</td>
+        <td>246</td>
+        <td>Punjab</td>
+    </tr>
+    <tr>
+        <td>4203</td>
+        <td>Aman</td>
+        <td>7639927794</td>
+        <td>BCA-I</td>
+        <td>286</td>
+        <td>Punjab</td>
+    </tr>
+    <tr>
+        <td>4204</td>
+        <td>Asha</td>
+        <td>6259927794</td>
+        <td>BCA-I</td>
+        <td>156</td>
+        <td>Haryana</td>
+    </tr></tbody></table>
+</div>
+        <h2>Query</h2>
+        <div class="p">CREATE VIEW failStudents AS SELECT * FROM student WHERE marks &lt; 180;<br>
+        Query OK, 0 rows affected (0.03 sec)<br><br>
+        SELECT * FROM failStudents;
+        <table>
+            <tbody><tr>
+                <th>RollNo</th>
+                <th>Name</th>
+                <th>PhoneNo</th>
+                <th>Class</th>
+                <th>Marks</th>
+                <th>City</th>
+            </tr>
+            <tr>
+                <td>4204</td>
+                <td>Asha</td>
+                <td>6259927794</td>
+                <td>BCA-I</td>
+                <td>156</td>
+                <td>Haryana</td>
+            </tr>
+        </tbody></table>
+    </div>
+        </div>
+</body>
+
+
+</html>

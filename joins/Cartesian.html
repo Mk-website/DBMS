@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css1/arr.css">
+</head>
+<body>
+    <div id="outputframe"> <h2>Cartesian Join</h2>
+        <p>A Cartesian join, also known as a Cartesian product or cross join, is a join operation that returns the Cartesian product of the sets of rows from the joined tables. It means that it produces a result set in which each row from the first table is combined with every row from the second table. This type of join is less common and can result in a large result set, especially when joining tables with a large number of rows. There is essentially only one type of Cartesian join, but it can be performed using different syntax variations:</p>
+        <h2>Syntax</h2>
+        <p><code>SELECT columns FROM table1 CROSS JOIN table2;</code><br><br>
+        
+        </p>
+        <div class="p"><table class="custTable">
+            <caption>Example Table : Customers</caption>
+        
+    <tbody><tr>
+        <th>customerID</th>
+        <th>CustomerName</th>
+        <th>ContactNo</th>
+        <th>Country</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Manjit</td>
+        <td>6283659862</td>
+        <td>Germany</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Anjali</td>
+        <td>7812569871</td>
+        <td>Mexico</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Aman</td>
+        <td>7639927794</td>
+        <td>Mexico</td>
+    </tr></tbody></table>
+        <table class="orderTable">
+            <caption>Example Table : Orders</caption>
+        
+    <tbody><tr>
+        <th>OrderID</th>
+        <th>customerId</th>
+        <th>OrderDate</th>
+    </tr>
+    <tr>
+        <td>10308</td>
+        <td>2</td>
+        <td>1996-09-18</td>
+    </tr>
+    <tr>
+        <td>10309</td>
+        <td>37</td>
+        <td>1996-09-19</td>
+    </tr>
+    <tr>
+        <td>10310</td>
+        <td>77</td>
+        <td>1996-09-20</td>
+    </tr></tbody></table>
+        </div>
+        <h2>Query</h2>
+        <div class="p">
+        SELECT Customers.CustomerName, Orders.OrderID FROM Customers CROSS JOIN Orders;
+        <table>
+            <tbody><tr>
+                <th>CustomerName</th>
+                <th>OrderID</th>
+            </tr>
+            <tr>
+                <td>Aman</td>
+                <td>10308</td>
+            </tr>
+            <tr>
+                <td>Anjali</td>
+                <td>10308</td>
+            </tr>
+            <tr>
+                <td>Manjit</td>
+                <td>10308</td>
+            </tr>
+            <tr>
+                <td>Aman</td>
+                <td>10309</td>
+            </tr>
+            <tr>
+                <td>Anjali</td>
+                <td>10309</td>
+            </tr>
+            <tr>
+                <td>Manjit</td>
+                <td>10309</td>
+            </tr>
+            <tr>
+                <td>Aman</td>
+                <td>10310</td>
+            </tr>
+            <tr>
+                <td>Anjali</td>
+                <td>10310</td>
+            </tr>
+            <tr>
+                <td>Manjit</td>
+                <td>10310</td>
+            </tr>
+        </tbody></table>
+        </div>
+
+        </div>
+</body>
+</html>

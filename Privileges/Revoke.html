@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="../css1/arr.css">
+</head>
+<body>
+    <div id="outputframe"> <h2>Revoking Permissions from users</h2>
+        <p>
+        In MySQL, the REVOKE statement is used to revoke previously granted privileges from users or roles. It effectively removes specific privileges from a user, limiting their access to certain databases, tables, or columns. Here's the basic syntax:</p>
+        <h2>Syntax</h2>
+        <p>
+            <code>REVOKE privileges ON database_name.table_name FROM 'user'@'host';</code>
+        </p>
+        <p>Replace privileges with the specific privileges you want to revoke, database_name.table_name with the name of the database and table (or * for all tables) you want to revoke access from, and 'user'@'host' with the username and host for the user you want to revoke access from.</p>
+        <h2>Examples</h2>
+        <p>1. Example to revoke SELECT privileges on all tables in the school database to a user named 'john' from localhost:<br><br>REVOKE SELECT ON school.* TO 'john'@'localhost';</p>
+        <p>2. Example to revoke multiple privileges at once:<br><br>REVOKE SELECT, INSERT, UPDATE ON school.* TO 'john'@'localhost';</p>
+        <p>3. Example to revoke all privileges on all tables in the school database to a user named 'john' from localhost:<br><br>REVOKE ALL PRIVILEGES ON school.* TO 'john'@'localhost';</p>
+        <p>4. Example to revoke all privileges on all databases to a user named 'john' from localhost:<br><br>REVOKE ALL PRIVILEGES ON *.* TO 'john'@'localhost';</p></div> </body>
+</html>
